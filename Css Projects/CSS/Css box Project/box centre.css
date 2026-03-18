@@ -1,0 +1,29 @@
+.parent{
+background-color: chocolate;
+color: black;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 11.5px;
+
+
+
+
+}
+.Child{
+background-color: white;
+color: blueviolet;
+width: 200px;
+height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 20px;
+font-weight: bold;
+
+
+
+
+
+}

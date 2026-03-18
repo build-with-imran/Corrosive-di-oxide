@@ -1,0 +1,100 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: Arial, sans-serif;
+}
+.main{
+    background-color: rgb(255, 255, 255);
+    height: 60vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 25px;
+padding: 20px;
+
+}
+.Label{
+width: 600PX;
+height: 35px;
+border-radius: 8PX;
+border: rgb(220, 214, 214) solid 2px;
+
+
+
+
+}
+.main img{
+    width: 300px;
+    transition: 1s;
+
+}
+.main img:hover{
+transform: rotate(360deg);
+
+}
+
+
+.button1{
+    background-color: white;
+    border: 0.5px solid rgb(255, 255, 255);
+    width:150px;
+    height: 30px;
+    gap: 20px;
+    border-radius: 6px;
+    transition: 0.2s;
+    font-weight: 20;
+
+}
+.button2{
+    background-color: white;
+    border: 0.5px solid rgb(255, 255, 255);
+    width: 150px;
+    height: 30px;
+    gap: 20px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.button1:hover{
+
+    border: 1px solid rgb(185, 190, 185);
+    transform: scale(1,1); 
+    
+    
+}
+.button2:hover{
+
+    
+    border: 1px solid rgb(185, 190, 185);
+    transform: scale(1,1);
+    
+}
+
+.footer{
+
+    font-weight: 10;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    color: rgb(102, 100, 97);
+    transition: 1s;
+}
+.anchor{
+    color: blue;
+    font-size: small;
+}
+a{
+    color: rgb(254, 40, 3);
+    font-size: small;
+    transition: 1.7s ;
+
+}
+
+
+
+ a:hover{
+    background-color:white ;
+    transform: scale(1.9)
+}

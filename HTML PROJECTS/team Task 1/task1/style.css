@@ -1,0 +1,137 @@
+/* Navigation bar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#1a237e;
+padding:10px 40px;
+color:white;
+}
+
+/* Logo container */
+
+.logo img{
+width:90px;
+height:60px;
+}
+
+/* Menu links */
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+.nav-links li a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+.nav-links li a:hover{
+text-decoration:underline;
+}
+
+/* Right side buttons */
+
+.nav-buttons{
+display:flex;
+gap:10px;
+}
+
+/* Login button */
+
+.login-btn{
+padding:8px 15px;
+background:white;
+color:#1a237e;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+/* Signup button */
+
+.signup-btn{
+padding:8px 15px;
+background:white;
+color:#1a237e;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+/* Login / Signup Form Box */
+
+.form-box{
+width:350px;
+margin:100px auto;
+padding:30px;
+background:#f7f2f2;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+/* Heading */
+
+.form-box h2{
+margin-bottom:20px;
+color:#1a237e;
+}
+
+/* Labels */
+
+.form-box label{
+display:block;
+text-align:left;
+margin-top:10px;
+font-weight:bold;
+}
+
+/* Inputs */
+
+.form-box input{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:4px;
+box-sizing:border-box;
+}
+
+/* Button */
+
+.form-box .login-btn{
+display:block;
+width:100%;
+padding:10px;
+background:#1a237e;
+color:white;
+text-decoration:none;
+border-radius:4px;
+text-align:center;
+margin-top:10px;
+font-weight:bold;
+}
+
+.login-btn:hover{
+background:#3949ab;
+}
+.signup-btn:hover{
+background:#3949ab;
+}
+
+/* Signup link */
+
+.form-box p{
+margin-top:10px;
+}
+
+.form-box a{
+color:#1a237e;
+text-decoration:none;
+font-weight:bold;
+}

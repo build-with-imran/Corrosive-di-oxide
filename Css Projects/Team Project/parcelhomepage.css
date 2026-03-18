@@ -1,0 +1,54 @@
+body{
+margin:0;
+font-family:Arial;
+}
+
+
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 50px;
+background:#648cf1;
+color:white;
+}
+
+.logo img{
+width:180px;
+}
+
+nav{
+display:flex;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav li{
+margin:0 20px;
+}
+
+nav li a{
+text-decoration:none;
+color:rgb(0, 0, 0);
+font-weight:bold;
+}
+
+nav li a:hover{
+color:rgb(219, 183, 23);
+}
+
+
+.login{
+font-weight:bold;
+}
+
+
+
+.hero{
+text-align:center;
+padding:100px;
+background:white;
+color: black;
+}
