@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadbuddy</title>
+    <!-- Use Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#44b7db',
+                            DEFAULT: '#0076f5',
+                            dark: '#0056b3',
+                            footer: '#3572eb'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Importing Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" href="Assests/logo.png">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar to match theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #0076f5; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0056b3; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-light selection:text-white">
+
+    <!-- Navbar (Sticky, Glassmorphism) -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-28">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="Assests/logo.png" class="h-20 sm:h-24 lg:h-28 w-auto object-contain py-2" alt="Roadbuddy Logo">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 lg:space-x-10">
+                    <a href="#home" class="text-slate-600 hover:text-brand font-semibold text-lg transition-colors duration-200 py-2">Home</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand font-semibold text-lg transition-colors duration-200 py-2">Services</a>
+                    <a href="#about" class="text-slate-600 hover:text-brand font-semibold text-lg transition-colors duration-200 py-2">About Us</a>
+                    <a href="form.html" class="text-brand hover:text-brand-dark font-bold text-lg relative group py-2">
+                        Make a Request
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- User Info -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <div class="flex flex-col items-end">
+                        <span class="text-sm text-slate-500 font-medium tracking-wide uppercase">Welcome,</span>
+                        <span class="text-base font-bold text-slate-800">Rani Mangamma Parameswari</span>
+                    </div>
+                    <div class="h-12 w-12 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center text-brand font-bold text-lg">
+                        R
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Banner Background -->
+    <main id="home" class="relative pt-28">
+        <!-- Banner Image as absolutely positioned background -->
+        <div class="absolute inset-0 z-0 h-[600px] w-full overflow-hidden">
+            <img src="Assests/Banner 2.png" alt="Banner" class="w-full h-full object-cover object-center">
+            <!-- Blue Tint Overlay to enhance the blue tone and make text readable -->
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-brand/60 mix-blend-multiply"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-48">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6 drop-shadow-md">
+                Stranded on the Road? <br class="hidden md:block" /> <span class="text-blue-100">We’re Here to Help.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-blue-50 font-medium mb-10 drop-shadow">
+                Fast, reliable roadside assistance anytime, anywhere. From breakdowns to emergency support, we’ve got you covered.
+            </p>
+            <a href="form.html" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-brand bg-white hover:bg-slate-50 hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-lg ring-4 ring-white/20">
+                Book Service Now
+            </a>
+        </div>
+    </main>
+
+    <!-- Services Section (Overlapping the Banner) -->
+    <section id="services" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 pb-20">
+        <div class="text-center mb-10 hidden">
+            <h2 class="text-3xl font-bold text-slate-800">Our Services</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <a href="form.html" class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                <div class="h-48 bg-blue-50/50 p-6 flex justify-center items-center overflow-hidden">
+                    <img src="Assests/petrol.png" alt="Petrol & Puncture" class="h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-brand transition-colors duration-200">Petrol & Puncture Service</h3>
+                    <p class="text-slate-600 leading-relaxed flex-1">Out of fuel or got a flat tyre? We provide quick petrol delivery and puncture repair right at your location.</p>
+                    <div class="mt-6 flex items-center text-brand font-semibold text-sm uppercase tracking-wider">
+                        Request Help <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="form.html" class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                <div class="h-48 bg-blue-50/50 p-6 flex justify-center items-center overflow-hidden">
+                    <img src="Assests/mechanical.png" alt="Mechanical Service" class="h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-brand transition-colors duration-200">Vehicle Mechanical Service</h3>
+                    <p class="text-slate-600 leading-relaxed flex-1">Facing engine or battery issues? Our expert mechanics provide on-the-spot troubleshooting and repair.</p>
+                    <div class="mt-6 flex items-center text-brand font-semibold text-sm uppercase tracking-wider">
+                        Request Help <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="form.html" class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                <div class="h-48 bg-blue-50/50 p-6 flex justify-center items-center overflow-hidden">
+                    <img src="Assests/tow.png" alt="Towing Service" class="h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-brand transition-colors duration-200">Vehicle Towing Service</h3>
+                    <p class="text-slate-600 leading-relaxed flex-1">Need to move your vehicle safely? We offer reliable, secure towing services to the nearest garage or your home.</p>
+                    <div class="mt-6 flex items-center text-brand font-semibold text-sm uppercase tracking-wider">
+                        Request Help <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Reliable Roadside Assistance You Can Trust</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                At <span class="text-brand font-semibold">RoadBuddy</span>, we provide quick and professional roadside assistance services. 
+                Whether it's a flat tyre, battery issue, or fuel delivery, our team ensures 
+                you are back on the road safely and quickly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-slate-50 relative overflow-hidden">
+        <!-- Decorative blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-brand/5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-400/5 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight">Why Choose Us?</h2>
+                <div class="w-24 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-brand">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">24/7 Support</h3>
+                    <p class="text-slate-600">We are available anytime, day or night, to assist you during emergencies.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-brand">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Quick Response</h3>
+                    <p class="text-slate-600">Our dispatch system ensures a team reaches your location as fast as possible.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-brand">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0-2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Affordable Service</h3>
+                    <p class="text-slate-600">High-quality professional service at highly reasonable and transparent pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-8">About RoadBuddy</h2>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>
+                    RoadBuddy is a trusted roadside assistance service dedicated to helping drivers 
+                    during unexpected vehicle breakdowns. Our mission is to provide fast, reliable, 
+                    and affordable support whenever and wherever you need it.
+                </p>
+                <p>
+                    With a team of skilled professionals and well-equipped service vehicles, 
+                    we handle everything from minor repairs to emergency towing. We prioritize 
+                    customer safety, satisfaction, and minimal wait times.
+                </p>
+                <p class="font-medium text-slate-700">
+                    Whether you're stuck in the city or on a highway, RoadBuddy ensures you’re 
+                    never alone on the road.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-footer text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Branding -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">RoadBuddy</h3>
+                    <p class="text-blue-100 max-w-sm">Your trusted and reliable partner for roadside assistance anytime, anywhere. We keep you moving forward.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-start md:items-center">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-blue-50">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-blue-200 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="#about" class="text-blue-200 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="form.html" class="text-blue-200 hover:text-white transition-colors font-medium">Make a Request</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="flex flex-col items-start md:items-end">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-blue-50">Contact Us</h4>
+                        <ul class="space-y-3 text-blue-100">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                +91 98765 43210
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                support@roadbuddy.co.in
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Chennai, India
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-blue-600/50 flex flex-col md:flex-row justify-between items-center text-blue-200 text-sm">
+                <p>© 2026 RoadBuddy. All rights reserved.</p>
+                <a href="#home" class="mt-4 md:mt-0 flex items-center hover:text-white transition-colors group">
+                    <span class="mr-2">Back to Top</span>
+                    <svg class="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

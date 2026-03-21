@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #050a15; /* Darker, slightly blue-tinted black to enhance the overall tone */
+    background-image: url('Assests/logo.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* For responsiveness on small screens */
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 123, 255, 0.15),
+                0 0 15px rgba(0, 123, 255, 0.05); /* Blue glow */
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.form-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 123, 255, 0.25),
+                0 0 25px rgba(0, 123, 255, 0.15); /* Enhanced blue glow on hover */
+}
+
+.form-box h2 {
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 15px 18px;
+    margin: 10px 0;
+    border: 2px solid #e1e5ea;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #333;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-box input::placeholder {
+    color: #a0a5ab;
+    transition: color 0.3s ease;
+}
+
+.form-box input:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15); /* Blue focus ring */
+    transform: scale(1.02);
+}
+
+.form-box input:focus::placeholder {
+    color: #c5c9cd;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Enhance the blue with a gradient */
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d82);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.divider {
+    margin: 30px 0;
+    color: #888;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e1e5ea;
+    margin: 0 15px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    color: #444;
+    font-weight: 600;
+    border: 2px solid #e1e5ea;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-btn:hover {
+    background: #f8f9fa;
+    border-color: #a0a5ab;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.google-btn:active {
+    transform: translateY(1px);
+}
+
+.link-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.link-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.link-text a:hover {
+    color: #004494;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .form-box {
+        padding: 40px 20px;
+        box-shadow: 0 5px 30px rgba(0, 123, 255, 0.1);
+    }
+    
+    .form-box h2 {
+        font-size: 24px;
+    }
+    
+    .form-box input, .btn, .google-btn {
+        font-size: 14px;
+        padding: 13px 15px;
+    }
+}

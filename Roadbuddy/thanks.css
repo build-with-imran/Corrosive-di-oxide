@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #e6f0ff 0%, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Subtle decorative background animation */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.04) 0%, transparent 70%);
+    animation: drift 20s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes drift {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    background: #ffffff;
+    padding: 50px 45px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.08), 
+                0 1px 3px rgba(0, 0, 0, 0.05);
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Beautiful animated checkmark */
+.checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2.5;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    box-shadow: 0 0 0 #007bff;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2.5;
+    stroke-miterlimit: 10;
+    stroke: #007bff;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 40px #007bff;
+    }
+}
+
+h2 {
+    color: #1a1a1a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-block: 0 15px;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: #5a6b7c;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
