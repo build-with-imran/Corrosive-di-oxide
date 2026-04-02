@@ -1,0 +1,11 @@
+<script>
+
+    let arr = [10, 50, 20, 80];
+
+let result = arr.reduce((max, num) => {
+    return num > max ? num : max;
+}, arr[0]);
+
+console.log(result);
+
+</script>

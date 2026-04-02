@@ -1,0 +1,17 @@
+<script>
+    let n = 10; // how many numbers you want
+
+let first = 0;
+let second = 1;
+
+console.log(first);
+console.log(second);
+
+for (let i = 2; i < n; i++) {
+    let next = first + second;
+    console.log(next);
+
+    first = second;
+    second = next;
+}
+</script>
