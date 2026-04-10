@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* Container */
+.container{
+  display:flex;
+  width:800px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Left Panel */
+.left{
+  flex:1;
+  background:#0d0d0d;
+  color:white;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.left h1{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.left p{
+  color:#bbb;
+}
+
+/* Right Panel */
+.right{
+  flex:1;
+  background:#fff;
+  padding:40px;
+}
+
+.right h2{
+  margin-bottom:20px;
+}
+
+/* Input */
+.input-group{
+  margin-bottom:15px;
+}
+
+.input-group input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+/* Button */
+button{
+  width:100%;
+  padding:12px;
+  background:#0d0d0d;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#333;
+}
+
+/* Signup Button Style */
+.signup-btn{
+  background:#2c5364;
+  margin-top:10px;
+}
+
+/* Error */
+.error{
+  color:red;
+  font-size:12px;
+  margin-top:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left">
+    <h1>Welcome Back</h1>
+    <p>Login to continue your professional journey.</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <h2>Login</h2>
+
+    <div class="input-group">
+      <input type="email" id="email" placeholder="Email">
+      <div id="emailError" class="error"></div>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Password">
+      <div id="passwordError" class="error"></div>
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <!-- Signup Section -->
+    <p style="margin-top:15px; text-align:center;">
+      Don't have an account?
+    </p>
+
+    <button class="signup-btn" onclick="goToSignup()">Signup</button>
+
+  </div>
+
+</div>
+
+<script src="login.js">
+
+</script>
+
+</body>
+</html>

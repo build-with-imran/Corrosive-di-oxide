@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saturn Tourism</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  background:#0b0f1a;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#020617;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#38bdf8;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#cbd5e1;
+}
+
+.nav-links a:hover{
+  color:#38bdf8;
+}
+
+/* AUTH BUTTONS */
+.auth-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.auth-buttons button{
+  padding:8px 15px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.signin{
+  background:transparent;
+  color:#38bdf8;
+  border:1px solid #38bdf8;
+}
+
+.signup{
+  background:#38bdf8;
+  color:#020617;
+}
+
+.signin:hover{
+  background:#38bdf8;
+  color:#020617;
+}
+
+.signup:hover{
+  background:#0ea5e9;
+}
+
+/* HERO */
+.hero{
+  height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1614728263952-84ea256f9679');
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:18px;
+  color:#cbd5e1;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:12px 25px;
+  background:#38bdf8;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:60px 40px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:280px;
+  background:#111827;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#38bdf8;
+}
+
+.card p{
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">SaturnX</div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Tours</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+
+    <!-- NEW BUTTONS -->
+    <div class="auth-buttons">
+      <button class="signin" onclick="goToLogin()">Sign In</button>
+      <button class="signup" onclick="goToSignup()">Sign Up</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Explore Saturn Rings 🪐</h1>
+    <p>Experience luxury tourism beyond Earth</p>
+    <button>Book Now</button>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="cards">
+
+  <div class="card">
+    <h3>🛰 Space Hotel</h3>
+    <p>Stay in floating luxury hotels orbiting Saturn with a full cosmic view.</p>
+  </div>
+
+  <div class="card">
+    <h3>🍽 Alien Cuisine</h3>
+    <p>Taste exotic dishes made from rare interstellar ingredients.</p>
+  </div>
+
+  <div class="card">
+    <h3>🚀 Ring Tour</h3>
+    <p>Travel through Saturn’s rings in a high-speed space cruiser.</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2035 SaturnX Tourism | Explore Beyond Limits 🚀</p>
+</footer>
+
+<script>
+// Redirect to Login
+function goToLogin() {
+  window.location.href = "login.html";
+}
+
+// Redirect to Signup
+function goToSignup() {
+  window.location.href = "register.html";
+}
+</script>
+
+</body>
+</html>
