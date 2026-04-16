@@ -1,0 +1,106 @@
+.about {
+  min-height: 100vh;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.about-hero p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.content-block {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border-left: 5px solid #667eea;
+}
+
+.content-block h2 {
+  color: #667eea;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.content-block p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+}
+
+.about-list li {
+  color: #555;
+  font-size: 16px;
+  padding: 12px 0;
+  line-height: 1.8;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.achievement {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement h3 {
+  color: #667eea;
+  font-size: 36px;
+  margin: 0 0 10px;
+}
+
+.achievement p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+  }
+
+  .content-block {
+    padding: 20px;
+  }
+
+  .content-block h2 {
+    font-size: 20px;
+  }
+}
