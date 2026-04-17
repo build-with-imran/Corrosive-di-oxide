@@ -1,0 +1,16 @@
+.navbar {
+
+  background-color: #e74242;
+  color: rgb(246, 239, 239);
+  text-decoration : none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px
+}
+
+.logo {
+  margin-left: auto;
+}
+
+
