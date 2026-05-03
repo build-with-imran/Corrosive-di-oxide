@@ -1,0 +1,61 @@
+.header {
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+  padding: 15px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--accent-blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 28px;
+  background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.username {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(109, 213, 237, 0.4);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
