@@ -14,23 +14,23 @@ const BookAppointments = () => {
     <div className="flex flex-col min-h-screen bg-slate-50">
       <Navbar />
       
-      <div className="flex-grow max-w-6xl mx-auto w-full px-4 py-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 text-center">
+      <div className="flex-grow max-w-6xl mx-auto w-full px-4 py-8 md:py-12">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 text-center">
           Book <span className="text-red-600">Appointments</span>
         </h1>
-        <p className="text-lg text-slate-600 text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-slate-600 text-center mb-10 md:mb-16 max-w-2xl mx-auto">
           Select from our wide range of diagnostic services. We partner with the best centers to ensure you get accurate and timely results.
         </p>
 
         {/* Blood Tests Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b-2 border-red-100 pb-2 inline-block">Blood Tests</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8 border-b-2 border-red-100 pb-2 inline-block">Blood Tests</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 bg-slate-200">
                 <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070&auto=format&fit=crop" alt="HbA1c Blood Test" className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 flex-grow flex flex-col justify-between">
+              <div className="p-5 md:p-6 flex-grow flex flex-col justify-between">
                 <div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">HbA1c & Diabetes Profile</h3>
                   <p className="text-slate-500 mb-6">Comprehensive blood sugar analysis to help monitor and manage diabetes effectively.</p>
@@ -45,7 +45,7 @@ const BookAppointments = () => {
               <div className="h-48 bg-slate-200">
                 <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070&auto=format&fit=crop" alt="Health Checkup Package" className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 flex-grow flex flex-col justify-between">
+              <div className="p-5 md:p-6 flex-grow flex flex-col justify-between">
                 <div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">Master Health Checkup Packages</h3>
                   <p className="text-slate-500 mb-6">Complete body screening covering vital organs and essential health parameters.</p>
@@ -59,9 +59,9 @@ const BookAppointments = () => {
         </section>
 
         {/* Scans Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b-2 border-red-100 pb-2 inline-block">Scans & Imaging</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8 border-b-2 border-red-100 pb-2 inline-block">Scans & Imaging</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-40 bg-slate-200">
                 <img src="https://images.pexels.com/photos/7089304/pexels-photo-7089304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ultrasound Scans" className="w-full h-full object-cover" />
@@ -110,9 +110,9 @@ const BookAppointments = () => {
         </section>
 
         {/* Cardiology Investigations Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b-2 border-red-100 pb-2 inline-block">Cardiology Investigations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8 border-b-2 border-red-100 pb-2 inline-block">Cardiology Investigations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 bg-slate-200">
                 <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop" alt="ECG Test" className="w-full h-full object-cover" />
@@ -147,18 +147,18 @@ const BookAppointments = () => {
 
         {/* X-Rays Section */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b-2 border-red-100 pb-2 inline-block">X-Rays</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8 border-b-2 border-red-100 pb-2 inline-block">X-Rays</h2>
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col md:flex-row">
             <div className="md:w-1/3 h-64 md:h-auto bg-slate-200">
               <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1964&auto=format&fit=crop" alt="X-Rays" className="w-full h-full object-cover" />
             </div>
-            <div className="p-8 md:w-2/3 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-slate-800 mb-3">All X-Ray Services</h3>
-              <p className="text-slate-500 mb-6 text-lg">
+            <div className="p-5 md:p-8 md:w-2/3 flex flex-col justify-center">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-3">All X-Ray Services</h3>
+              <p className="text-slate-500 mb-6 text-base md:text-lg">
                 Fast and accurate X-ray imaging for bones, chest, and dental diagnostics. We provide quick reporting and comfortable facilities.
               </p>
               <div className="mt-auto md:mt-4">
-                <button onClick={() => handleBook('x-ray')} className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-medium transition-colors shadow-sm inline-flex items-center gap-2">
+                <button onClick={() => handleBook('x-ray')} className="w-full justify-center sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-medium transition-colors shadow-sm inline-flex items-center gap-2">
                   <span>Book X-Rays</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -171,9 +171,9 @@ const BookAppointments = () => {
 
         {/* Doctor Consultations Section */}
         <section className="mt-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b-2 border-red-100 pb-2 inline-block">Doctor Consultations</h2>
-          <p className="text-slate-600 mb-8 text-lg">Connect with experienced specialists across various medical disciplines. Book consultations with hospitals near you.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8 border-b-2 border-red-100 pb-2 inline-block">Doctor Consultations</h2>
+          <p className="text-slate-600 mb-8 text-base md:text-lg">Connect with experienced specialists across various medical disciplines. Book consultations with hospitals near you.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {CONSULTATION_TYPES.map((consultation, index) => (
               <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-slate-100 flex flex-col hover:scale-105 duration-300">
                 <div className="h-32 bg-gradient-to-r from-red-50 to-red-100 flex items-center justify-center">

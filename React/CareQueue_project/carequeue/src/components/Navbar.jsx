@@ -14,17 +14,24 @@ const Navbar = () => {
 
   const [query, setQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const searchRef = useRef(null);
 
+  const filteredServices = SERVICES.filter((service) =>
+    service.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const closeMenu = () => setMenuOpen(false);
+
   const handleLogout = () => {
+    closeMenu();
     logout();
   };
-
-  const filteredServices = SERVICES.filter(s => s.toLowerCase().includes(query.toLowerCase()));
 
   const handleSelectService = (service) => {
     setQuery(service);
     setShowSuggestions(false);
+    closeMenu();
     navigate(`/search?service=${encodeURIComponent(service)}`);
   };
 
@@ -40,164 +47,136 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
-    <nav style={styles.nav}>
-      
-      {/* Left - Logo */}
-      <div style={styles.logo}>
-        <Link to="/" style={styles.logoLink}>
-          <img src={logo} alt="CareQueue logo" style={styles.logoImage} />
-          <span>CareQueue</span>
-        </Link>
-      </div>
+  const navLinks = (
+    <>
+      <Link to="/" onClick={closeMenu} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600">
+        Home
+      </Link>
+      <Link to="/book-appointments" onClick={closeMenu} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600">
+        Book
+      </Link>
+      <Link to="/appointments" onClick={closeMenu} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600">
+        Appointments
+      </Link>
+      <Link to="/about" onClick={closeMenu} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600">
+        About
+      </Link>
+    </>
+  );
 
-      {/* Center - Search */}
-      <div style={styles.searchContainer} ref={searchRef}>
-        <input
-          type="text"
-          placeholder="Search tests, scans, consultations, doctors..."
-          style={styles.input}
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setShowSuggestions(true);
-          }}
-          onFocus={() => setShowSuggestions(true)}
-        />
-        {showSuggestions && (
-          <div style={styles.dropdown}>
-            {filteredServices.length > 0 ? (
-              filteredServices.map((service, index) => (
-                <div 
-                  key={index} 
-                  style={styles.dropdownItem}
-                  onClick={() => handleSelectService(service)}
-                  onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
-                  onMouseLeave={(e) => e.target.style.background = 'white'}
-                >
-                  {service}
-                </div>
-              ))
-            ) : (
-              <div style={styles.dropdownItemEmpty}>No matching services found</div>
+  return (
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 md:flex-nowrap md:px-6">
+        <Link to="/" onClick={closeMenu} className="flex min-w-0 items-center gap-2 text-lg font-extrabold text-red-600">
+          <img src={logo} alt="CareQueue logo" className="h-10 w-10 shrink-0 object-contain" />
+          <span className="truncate">CareQueue</span>
+        </Link>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 md:hidden"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span className="sr-only">Menu</span>
+          {menuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm1 4a1 1 0 100 2h12a1 1 0 100-2H4z" clipRule="evenodd" />
+            </svg>
+          )}
+        </button>
+
+        <div className="order-3 w-full md:order-none md:min-w-64 md:flex-1" ref={searchRef}>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search tests, scans, consultations..."
+              className="h-11 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-100"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+            />
+            {showSuggestions && (
+              <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-72 overflow-auto rounded-xl border border-slate-200 bg-white text-left shadow-xl">
+                {filteredServices.length > 0 ? (
+                  filteredServices.map((service, index) => (
+                    <button
+                      type="button"
+                      key={`${service}-${index}`}
+                      className="block w-full border-b border-slate-100 px-4 py-3 text-left text-sm text-slate-700 last:border-b-0 hover:bg-slate-50"
+                      onClick={() => handleSelectService(service)}
+                    >
+                      {service}
+                    </button>
+                  ))
+                ) : (
+                  <div className="px-4 py-3 text-sm text-slate-400">No matching services found</div>
+                )}
+              </div>
             )}
           </div>
-        )}
-      </div>
+        </div>
 
-      {/* Right - Menu */}
-      <div style={styles.links}>
-        <Link to="/" style={styles.link}>Home</Link>
-        <Link to="/book-appointments" style={styles.link}>Book Appointment</Link>
-        <Link to="/appointments" style={styles.link}>My Appointments</Link>
-        <Link to="/about" style={styles.link}>About</Link>
+        <div className="hidden items-center gap-1 md:flex">
+          {navLinks}
+          {currentUser ? (
+            <>
+              <span className="max-w-36 truncate px-2 text-sm text-slate-500" title={currentUser.email}>
+                {currentUser.email}
+              </span>
+              <button onClick={handleLogout} className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700">
+                Login
+              </Link>
+              <Link to="/signup" className="rounded-lg border border-red-200 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-50">
+                Signup
+              </Link>
+            </>
+          )}
+        </div>
+      </nav>
 
-        {currentUser ? (
-          <>
-            <span style={styles.user}>Hi, {currentUser.email}</span>
-            <button onClick={handleLogout} style={styles.btn}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" style={styles.btn}>Login</Link>
-            <Link to="/signup" style={styles.btn}>Signup</Link>
-          </>
-        )}
-      </div>
-    </nav>
+      {menuOpen && (
+        <div className="border-t border-slate-100 bg-white px-4 pb-4 md:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col gap-1 pt-3">
+            {navLinks}
+            {currentUser && (
+              <p className="break-all px-3 py-2 text-xs font-medium text-slate-500">
+                Signed in as {currentUser.email}
+              </p>
+            )}
+            {currentUser ? (
+              <button onClick={handleLogout} className="mt-2 rounded-lg bg-red-600 px-4 py-3 text-sm font-semibold text-white">
+                Logout
+              </button>
+            ) : (
+              <div className="mt-2 grid grid-cols-2 gap-2">
+                <Link to="/login" onClick={closeMenu} className="rounded-lg bg-red-600 px-4 py-3 text-center text-sm font-semibold text-white">
+                  Login
+                </Link>
+                <Link to="/signup" onClick={closeMenu} className="rounded-lg border border-red-200 px-4 py-3 text-center text-sm font-semibold text-red-600">
+                  Signup
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 
 export default Navbar;
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "10px 20px",
-    background: "white",
-    color: "#1f2937",
-    borderBottom: "1px solid #e5e7eb",
-  },
-  logo: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    color: "#dc2626",
-  },
-  logoLink: {
-    color: "inherit",
-    textDecoration: "none",
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-    whiteSpace: "nowrap",
-  },
-  logoImage: {
-    width: "42px",
-    height: "42px",
-    objectFit: "contain",
-    display: "block",
-  },
-  searchContainer: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    position: "relative",
-  },
-  input: {
-    width: "60%",
-    padding: "10px 16px",
-    borderRadius: "20px",
-    border: "1px solid #d1d5db",
-    outline: "none",
-  },
-  dropdown: {
-    position: "absolute",
-    top: "100%",
-    width: "60%",
-    marginTop: "8px",
-    background: "white",
-    border: "1px solid #e5e7eb",
-    borderRadius: "8px",
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-    zIndex: 50,
-    overflow: "hidden",
-    textAlign: "left",
-  },
-  dropdownItem: {
-    padding: "12px 16px",
-    cursor: "pointer",
-    color: "#374151",
-    borderBottom: "1px solid #f3f4f6",
-    transition: "background 0.2s",
-  },
-  dropdownItemEmpty: {
-    padding: "12px 16px",
-    color: "#9ca3af",
-  },
-  links: {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-  },
-  link: {
-    color: "#1f2937",
-    textDecoration: "none",
-  },
-  btn: {
-    background: "#dc2626",
-    border: "none",
-    padding: "6px 12px",
-    cursor: "pointer",
-    borderRadius: "5px",
-    textDecoration: "none",
-    color: "white",
-  },
-  user: {
-    fontSize: "14px",
-    color: "#1f2937",
-  },
-};

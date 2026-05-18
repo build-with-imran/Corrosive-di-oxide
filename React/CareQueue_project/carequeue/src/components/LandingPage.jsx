@@ -22,22 +22,22 @@ const LandingPage = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-red-500/20 text-red-300 font-semibold text-sm mb-6 border border-red-500/30">
+        <div className="relative max-w-6xl mx-auto px-4 py-14 sm:py-16 md:py-28 text-center">
+          <div className="inline-block px-3 py-1.5 rounded-full bg-red-500/20 text-red-300 font-semibold text-xs sm:text-sm mb-5 border border-red-500/30">
             Welcome to CareQueue
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-5 tracking-tight leading-tight">
             Modern Healthcare <br />
             <span className="text-red-400">Simplified for You</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-base md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-7">
             CareQueue connects you with trusted NABL-accredited labs and AERB-certified imaging centres across India. 
             Book blood tests, scans, and X-rays — all in a few clicks, with zero waiting time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate("/book-appointments")}
-              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-red-900/30 hover:shadow-xl hover:shadow-red-900/40 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg shadow-red-900/30 hover:shadow-xl hover:shadow-red-900/40 hover:-translate-y-0.5"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
@@ -46,7 +46,7 @@ const LandingPage = () => {
             </button>
             <button
               onClick={() => navigate("/about")}
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all border border-white/20 hover:-translate-y-0.5"
             >
               Learn More
             </button>
@@ -54,12 +54,12 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="flex-grow max-w-6xl mx-auto w-full px-4 py-16">
+      <div className="flex-grow max-w-6xl mx-auto w-full px-4 py-10 md:py-16">
 
         {/* Quick Stats */}
-        <section className="mb-20">
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <section className="mb-12 md:mb-20">
+          <div className="bg-white rounded-2xl md:rounded-3xl border border-slate-200 shadow-sm p-5 md:p-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center">
               <div>
                 <p className="text-3xl md:text-4xl font-extrabold text-red-600 mb-1">50+</p>
                 <p className="text-slate-500 font-medium text-sm md:text-base">Partner Centres</p>
@@ -81,15 +81,15 @@ const LandingPage = () => {
         </section>
 
         {/* Booking Cards Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-4">
+        <section className="mb-12 md:mb-20">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 text-center mb-4">
             Book <span className="text-red-600">Diagnostics</span> Near You
           </h2>
-          <p className="text-slate-500 text-center mb-12 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-500 text-center mb-8 md:mb-12 max-w-2xl mx-auto text-base md:text-lg">
             Choose a service below and we'll find the best diagnostic centres near you with available slots.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
 
             {/* Blood Tests Card */}
             <div

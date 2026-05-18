@@ -55,11 +55,11 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="bg-white border-2 border-red-500 rounded-lg shadow-lg p-8 w-full max-w-md">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 py-8">
+      <div className="bg-white border border-red-100 rounded-2xl shadow-lg p-5 sm:p-8 w-full max-w-md">
         {/* Logo Space */}
         <div className="flex justify-center mb-6">
-          <div className="w-24 h-24 flex items-center justify-center">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
             <img src={logo} alt="CareQueue logo" className="max-w-full max-h-full object-contain" />
           </div>
         </div>
