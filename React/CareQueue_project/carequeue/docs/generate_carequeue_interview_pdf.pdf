@@ -1,0 +1,708 @@
+from pathlib import Path
+
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_CENTER, TA_LEFT
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch
+from reportlab.platypus import (
+    Flowable,
+    Image,
+    KeepTogether,
+    ListFlowable,
+    ListItem,
+    PageBreak,
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+)
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "docs" / "CareQueue_Project_Interview_Guide.pdf"
+LOGO = ROOT / "src" / "assets" / "logo.png"
+
+
+class HRLine(Flowable):
+    def __init__(self, width=7.0 * inch, height=1):
+        super().__init__()
+        self.width = width
+        self.height = height
+
+    def draw(self):
+        self.canv.setStrokeColor(colors.HexColor("#e11d48"))
+        self.canv.setLineWidth(1.2)
+        self.canv.line(0, 0, self.width, 0)
+
+
+def make_styles():
+    base = getSampleStyleSheet()
+    return {
+        "cover_title": ParagraphStyle(
+            "cover_title",
+            parent=base["Title"],
+            fontName="Helvetica-Bold",
+            fontSize=34,
+            leading=40,
+            textColor=colors.HexColor("#991b1b"),
+            alignment=TA_CENTER,
+            spaceAfter=12,
+        ),
+        "cover_subtitle": ParagraphStyle(
+            "cover_subtitle",
+            parent=base["Normal"],
+            fontName="Helvetica",
+            fontSize=14,
+            leading=20,
+            textColor=colors.HexColor("#334155"),
+            alignment=TA_CENTER,
+            spaceAfter=16,
+        ),
+        "h1": ParagraphStyle(
+            "h1",
+            parent=base["Heading1"],
+            fontName="Helvetica-Bold",
+            fontSize=20,
+            leading=24,
+            textColor=colors.HexColor("#991b1b"),
+            spaceBefore=10,
+            spaceAfter=8,
+        ),
+        "h2": ParagraphStyle(
+            "h2",
+            parent=base["Heading2"],
+            fontName="Helvetica-Bold",
+            fontSize=14,
+            leading=18,
+            textColor=colors.HexColor("#111827"),
+            spaceBefore=8,
+            spaceAfter=6,
+        ),
+        "body": ParagraphStyle(
+            "body",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=10,
+            leading=14,
+            textColor=colors.HexColor("#1f2937"),
+            spaceAfter=6,
+        ),
+        "small": ParagraphStyle(
+            "small",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=8.5,
+            leading=12,
+            textColor=colors.HexColor("#475569"),
+            spaceAfter=4,
+        ),
+        "label": ParagraphStyle(
+            "label",
+            parent=base["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=9.5,
+            leading=13,
+            textColor=colors.HexColor("#991b1b"),
+        ),
+        "quote": ParagraphStyle(
+            "quote",
+            parent=base["BodyText"],
+            fontName="Helvetica-Oblique",
+            fontSize=10.5,
+            leading=15,
+            leftIndent=12,
+            rightIndent=12,
+            textColor=colors.HexColor("#334155"),
+            backColor=colors.HexColor("#fff1f2"),
+            borderColor=colors.HexColor("#fecdd3"),
+            borderWidth=0.7,
+            borderPadding=8,
+            spaceBefore=6,
+            spaceAfter=8,
+        ),
+        "code": ParagraphStyle(
+            "code",
+            parent=base["Code"],
+            fontName="Courier",
+            fontSize=8.3,
+            leading=11,
+            textColor=colors.HexColor("#0f172a"),
+            backColor=colors.HexColor("#f8fafc"),
+            borderColor=colors.HexColor("#e2e8f0"),
+            borderWidth=0.5,
+            borderPadding=6,
+            spaceBefore=4,
+            spaceAfter=6,
+        ),
+        "table_head": ParagraphStyle(
+            "table_head",
+            parent=base["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=8.8,
+            leading=11,
+            textColor=colors.white,
+        ),
+        "table_cell": ParagraphStyle(
+            "table_cell",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=8.4,
+            leading=11.5,
+            textColor=colors.HexColor("#1f2937"),
+        ),
+    }
+
+
+S = make_styles()
+
+
+def p(text, style="body"):
+    return Paragraph(text, S[style])
+
+
+def bullets(items):
+    return ListFlowable(
+        [ListItem(p(item, "body"), leftIndent=12) for item in items],
+        bulletType="bullet",
+        start="circle",
+        leftIndent=18,
+    )
+
+
+def numbered(items):
+    return ListFlowable(
+        [ListItem(p(item, "body"), leftIndent=14) for item in items],
+        bulletType="1",
+        leftIndent=20,
+    )
+
+
+def table(rows, widths=None):
+    wrapped = []
+    for i, row in enumerate(rows):
+        wrapped.append([p(str(cell), "table_head" if i == 0 else "table_cell") for cell in row])
+    if widths is None:
+        widths = [1.55 * inch, 4.75 * inch]
+    t = Table(wrapped, colWidths=widths, hAlign="LEFT")
+    t.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#991b1b")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("BACKGROUND", (0, 1), (-1, -1), colors.HexColor("#ffffff")),
+                ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#cbd5e1")),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 7),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+                ("TOPPADDING", (0, 0), (-1, -1), 6),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+            ]
+        )
+    )
+    return t
+
+
+def callout(title, body):
+    data = [[p(title, "label")], [p(body, "small")]]
+    t = Table(data, colWidths=[6.55 * inch], hAlign="LEFT")
+    t.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#fff7ed")),
+                ("BOX", (0, 0), (-1, -1), 0.8, colors.HexColor("#fed7aa")),
+                ("LEFTPADDING", (0, 0), (-1, -1), 8),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+                ("TOPPADDING", (0, 0), (-1, -1), 7),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
+            ]
+        )
+    )
+    return KeepTogether([t, Spacer(1, 8)])
+
+
+def section(title):
+    return [p(title, "h1"), HRLine(width=6.55 * inch), Spacer(1, 8)]
+
+
+def add_page_number(canvas, doc):
+    canvas.saveState()
+    width, height = A4
+    canvas.setFont("Helvetica", 8)
+    canvas.setFillColor(colors.HexColor("#64748b"))
+    canvas.drawString(doc.leftMargin, 0.38 * inch, "CareQueue Project Interview Guide")
+    canvas.drawRightString(width - doc.rightMargin, 0.38 * inch, f"Page {doc.page}")
+    canvas.restoreState()
+
+
+def build_story():
+    story = []
+
+    story.append(Spacer(1, 0.4 * inch))
+    if LOGO.exists():
+        story.append(Image(str(LOGO), width=1.15 * inch, height=1.15 * inch, hAlign="CENTER"))
+        story.append(Spacer(1, 0.15 * inch))
+    story.append(p("CareQueue", "cover_title"))
+    story.append(p("Project Documentation and Interview Preparation Guide", "cover_subtitle"))
+    story.append(p("For Frontend Developer Fresher HR and Technical Rounds", "cover_subtitle"))
+    story.append(Spacer(1, 0.2 * inch))
+    story.append(
+        callout(
+            "One-line project summary",
+            "CareQueue is a React-based healthcare appointment booking frontend where users can sign up, log in, search diagnostic services or doctor consultations, book appointments, and manage their bookings.",
+        )
+    )
+    story.append(Spacer(1, 0.2 * inch))
+    story.append(
+        table(
+            [
+                ["Item", "Details"],
+                ["Project type", "Frontend single page application"],
+                ["Domain", "Healthcare appointment and diagnostic booking"],
+                ["Main users", "Patients who want to book tests, scans, X-rays, ECG, echocardiogram, and consultations"],
+                ["Deployment", "Vercel, connected to GitHub"],
+                ["Important note", "This is a frontend prototype. Authentication and booking persistence are simulated using browser localStorage."],
+            ]
+        )
+    )
+    story.append(PageBreak())
+
+    story += section("1. Project Introduction")
+    story.append(
+        p(
+            "CareQueue is a healthcare booking web application designed to reduce waiting time and simplify the process of finding diagnostic centres and hospital consultations. The user can create an account, log in, browse services, view matching centres or doctors, book an appointment, and later view or cancel the appointment.",
+        )
+    )
+    story.append(
+        p(
+            "The project is built as a frontend-first prototype. Instead of using a backend server, it uses mock data files and browser localStorage to simulate users, login state, and saved bookings. This makes the project easy to demonstrate in an interview while still showing core frontend skills such as routing, reusable components, state management, forms, conditional rendering, and deployment.",
+        )
+    )
+    story.append(p("Problem Statement", "h2"))
+    story.append(
+        p(
+            "Patients often need to compare centres, check available services, and book diagnostic tests without calling multiple places. CareQueue solves this by providing a simple interface where users can select a healthcare service and quickly find relevant centres or doctors.",
+        )
+    )
+    story.append(p("Objectives", "h2"))
+    story.append(
+        bullets(
+            [
+                "Build a clean and responsive healthcare booking interface.",
+                "Allow users to sign up, log in, and maintain a session in the browser.",
+                "Show diagnostic centres based on the selected service.",
+                "Support doctor consultations using structured hospital and doctor data.",
+                "Collect appointment details through controlled React forms.",
+                "Store booking data locally and show it on the My Appointments page.",
+                "Deploy the application publicly using GitHub and Vercel.",
+            ]
+        )
+    )
+
+    story += section("2. Technology Stack")
+    story.append(
+        table(
+            [
+                ["Technology", "Use in CareQueue"],
+                ["React", "Used to build the user interface with components such as Navbar, AuthPage, SearchResults, BookingForm, and MyAppointments."],
+                ["Vite", "Used as the frontend build tool and development server. It provides fast startup, fast refresh, and production bundling."],
+                ["React Router DOM", "Used for client-side navigation between pages like /, /search, /book-appointments, /booking-form, /appointments, and /about."],
+                ["Tailwind CSS", "Used for utility-first styling, responsive layouts, spacing, colors, grids, and form design."],
+                ["JavaScript ES Modules", "Used to organize components and data files with import/export."],
+                ["localStorage", "Used to simulate users, current login session, and appointment bookings in the browser."],
+                ["ESLint", "Used to catch unused variables and React code quality issues before deployment."],
+                ["Vercel", "Used to deploy the Vite build output from GitHub."],
+                ["GitHub", "Used as the version control and source repository connected to Vercel."],
+            ],
+            widths=[1.65 * inch, 4.9 * inch],
+        )
+    )
+    story.append(Spacer(1, 8))
+    story.append(
+        callout(
+            "Interview wording",
+            "I used React and Vite for the frontend, React Router for page navigation, Tailwind CSS for styling, and localStorage to simulate persistence for this frontend prototype. The app is deployed on Vercel through GitHub.",
+        )
+    )
+
+    story += section("3. Main Features")
+    story.append(
+        table(
+            [
+                ["Feature", "Description"],
+                ["Login and signup", "Users can register with email and password. Details are stored in the browser under the users key."],
+                ["Protected routes", "If the user is not logged in, routes show the AuthPage instead of the actual page."],
+                ["Landing page", "Displays a hero section, healthcare service highlights, quick stats, and call-to-action buttons."],
+                ["Service browsing", "Users can browse blood tests, scans, ECG, echocardiogram, X-rays, and doctor consultations."],
+                ["Search results", "The app filters diagnostic centres or doctor consultation data based on the selected service."],
+                ["Booking form", "Users enter name, age, mobile number, appointment date, timing, and patient information."],
+                ["Booking history", "Confirmed appointments are stored and displayed for the currently logged-in user."],
+                ["Cancel appointment", "The appointment status can be changed from Confirmed to Cancelled."],
+                ["Deployment-ready routing", "A Vercel rewrite config sends all routes to index.html so React Router routes work after refresh."],
+            ],
+            widths=[1.55 * inch, 5.0 * inch],
+        )
+    )
+
+    story += section("4. User Flow")
+    story.append(p("The main flow of the application is simple and can be explained clearly in interviews:", "body"))
+    story.append(
+        numbered(
+            [
+                "The user opens the CareQueue website.",
+                "If not logged in, the AuthPage is shown with Login and Signup tabs.",
+                "After signup or login, the user is taken to the home page.",
+                "The user selects a service such as blood tests, scans, ECG, X-ray, or a consultation.",
+                "The app navigates to /search with the selected service in the URL query string.",
+                "SearchResults reads the service from the URL and filters matching centres or doctors.",
+                "The user selects a centre or doctor and moves to the BookingForm page.",
+                "BookingForm displays service details, price, reviews, doctor details if applicable, and the appointment form.",
+                "On submit, a booking object is stored in localStorage under carequeue_bookings.",
+                "The user is redirected to My Appointments, where their bookings are filtered by the logged-in email.",
+            ]
+        )
+    )
+    story.append(p("Flow Diagram", "h2"))
+    story.append(
+        p(
+            "Open App -> Signup/Login -> Landing Page -> Select Service -> Search Results -> Booking Form -> Save Booking -> My Appointments -> Cancel if needed",
+            "code",
+        )
+    )
+
+    story += section("5. Application Architecture")
+    story.append(
+        p(
+            "CareQueue follows a component-based frontend architecture. Each major screen is a React component, and shared layout pieces such as Navbar and Footer are reused across pages. Data is separated into data files for cleaner code organization.",
+        )
+    )
+    story.append(
+        table(
+            [
+                ["Area", "Files / Responsibility"],
+                ["Entry point", "src/main.jsx creates the React root and renders App inside StrictMode."],
+                ["Routing", "src/App.jsx defines routes and checks login status before showing protected pages."],
+                ["Authentication state", "src/components/AuthContext.jsx stores isLoggedIn state and exposes login/logout functions."],
+                ["Auth UI", "src/components/AuthPage.jsx handles Login and Signup tabs."],
+                ["Home page", "src/components/LandingPage.jsx shows the main dashboard-style landing page."],
+                ["Service selection", "src/components/BookAppointments.jsx lists available diagnostic and consultation services."],
+                ["Search results", "src/components/SearchResults.jsx filters centres or doctors based on URL query params."],
+                ["Booking", "src/components/BookingForm.jsx collects appointment details and writes bookings to localStorage."],
+                ["Appointments", "src/components/MyAppointments.jsx reads and filters bookings for the current user."],
+                ["Mock pricing data", "src/data/pricing.js maps centre/service combinations to prices."],
+                ["Mock consultation data", "src/data/consultations.js stores consultation types, hospitals, doctors, and reviews."],
+            ],
+            widths=[1.6 * inch, 4.95 * inch],
+        )
+    )
+
+    story += section("6. Routing Explanation")
+    story.append(
+        p(
+            "The app uses BrowserRouter from React Router DOM. The AppContent component reads isLoggedIn from the auth context and conditionally renders either the requested page or AuthPage. This is a simple protected-route pattern suitable for a frontend prototype.",
+        )
+    )
+    story.append(
+        table(
+            [
+                ["Route", "Purpose"],
+                ["/", "Shows LandingPage after login, otherwise AuthPage."],
+                ["/search", "Shows SearchResults for the selected service query."],
+                ["/book-appointments", "Shows the service catalogue page."],
+                ["/booking-form", "Shows the detailed booking form for a chosen centre/doctor."],
+                ["/appointments", "Shows the logged-in user's bookings."],
+                ["/about", "Shows the about/information page."],
+            ],
+            widths=[1.7 * inch, 4.85 * inch],
+        )
+    )
+    story.append(
+        callout(
+            "Why vercel.json is needed",
+            "Because BrowserRouter handles routes in the browser, refreshing /appointments directly can fail on static hosts unless the host sends every route back to index.html. The vercel.json rewrite fixes that for Vercel.",
+        )
+    )
+
+    story += section("7. Authentication and State Management")
+    story.append(
+        p(
+            "CareQueue uses React state and Context API for login status. The AuthProvider stores isLoggedIn and exposes login and logout functions. When login succeeds, the current user is stored in localStorage using the currentUser key.",
+        )
+    )
+    story.append(
+        table(
+            [
+                ["localStorage key", "What it stores"],
+                ["users", "Array of registered users from the signup form."],
+                ["currentUser", "The currently logged-in user's details."],
+                ["carequeue_bookings", "Array of appointment booking records."],
+            ],
+            widths=[1.9 * inch, 4.65 * inch],
+        )
+    )
+    story.append(p("Important technical explanation", "h2"))
+    story.append(
+        bullets(
+            [
+                "Signup reads existing users, checks duplicate email, then saves the new user.",
+                "Login compares entered email/password with saved users.",
+                "AuthProvider checks localStorage on page load to restore login state.",
+                "The app uses conditional rendering to protect pages from unauthenticated users.",
+                "This is not real secure authentication; it is a frontend simulation for demo purposes.",
+            ]
+        )
+    )
+    story.append(
+        callout(
+            "Interview honesty",
+            "Say this clearly: For this project I used localStorage to simulate authentication because my focus was frontend flow. In a production app I would use a backend with hashed passwords, JWT or sessions, and a real database.",
+        )
+    )
+
+    story += section("8. Search and Booking Logic")
+    story.append(p("SearchResults works in two modes: diagnostic services and doctor consultations.", "body"))
+    story.append(
+        table(
+            [
+                ["Mode", "How it works"],
+                ["Diagnostic services", "The selected service is compared with each centre's services array. Matching centres are displayed with image, rating, location, phone, services, and price."],
+                ["Doctor consultations", "If the selected service matches CONSULTATION_TYPES, the app looks inside HOSPITAL_DOCTORS and displays hospitals with matching doctors."],
+                ["Price display", "getPriceDetails(centerName, serviceName) returns a centre-specific price or a default price."],
+                ["Booking navigation", "Clicking a result sends centre, service, and optionally doctor details through URL query params to BookingForm."],
+            ],
+            widths=[1.7 * inch, 4.85 * inch],
+        )
+    )
+    story.append(p("BookingForm responsibilities", "h2"))
+    story.append(
+        bullets(
+            [
+                "Reads centre, service, and doctor from URL search parameters.",
+                "Displays centre/hospital information, rating, reviews, price, and report timing.",
+                "Uses controlled form fields for appointment data.",
+                "Supports booking for myself or someone else.",
+                "Creates a booking object with id, centreName, price, userEmail, status, and bookedAt.",
+                "Saves the booking to carequeue_bookings in localStorage.",
+                "Shows a confirmation message and redirects to /appointments.",
+            ]
+        )
+    )
+
+    story += section("9. Appointment Management")
+    story.append(
+        p(
+            "The MyAppointments component displays only the bookings that belong to the logged-in user. It reads currentUser from localStorage, loads all bookings from carequeue_bookings, and filters them by userEmail.",
+        )
+    )
+    story.append(
+        table(
+            [
+                ["Action", "Implementation"],
+                ["View appointments", "Filter all saved bookings using the current user's email."],
+                ["Summary badges", "Show total, confirmed, and cancelled appointment counts."],
+                ["Cancel appointment", "Update the matching booking status to Cancelled and save the updated array."],
+                ["Empty state", "If no bookings exist, show a message and link to book an appointment."],
+            ],
+            widths=[1.65 * inch, 4.9 * inch],
+        )
+    )
+
+    story += section("10. Deployment Explanation")
+    story.append(
+        p(
+            "The project is deployed on Vercel from a GitHub repository. Vercel installs dependencies using npm install, builds the project using npm run build, and serves the dist folder generated by Vite.",
+        )
+    )
+    story.append(
+        table(
+            [
+                ["Vercel setting", "Value"],
+                ["Root Directory", "React/CareQueue_project/carequeue"],
+                ["Framework / Preset", "Vite"],
+                ["Install Command", "npm install"],
+                ["Build Command", "npm run build"],
+                ["Output Directory", "dist"],
+                ["Routing config", "vercel.json rewrites all paths to /index.html"],
+            ],
+            widths=[1.9 * inch, 4.65 * inch],
+        )
+    )
+    story.append(p("How updates work", "h2"))
+    story.append(
+        p(
+            "When changes are pushed to GitHub, Vercel automatically creates a new deployment. Manual redeploy is only needed if a build fails, settings change, or the same commit needs to be rebuilt.",
+        )
+    )
+
+    story += section("11. HR Round Explanation")
+    story.append(p("30-second answer", "h2"))
+    story.append(
+        p(
+            "CareQueue is a healthcare appointment booking web app that I built using React. The main goal is to help users book diagnostic tests, scans, X-rays, ECG, echocardiogram, and doctor consultations from one place. Users can sign up, log in, search services, book appointments, and view or cancel bookings. I deployed it on Vercel, so it is available as a live project.",
+            "quote",
+        )
+    )
+    story.append(p("1-minute answer", "h2"))
+    story.append(
+        p(
+            "In CareQueue, I focused on building a practical frontend application instead of only a static website. I implemented routing with React Router, created reusable components, used forms for booking data, and stored users and bookings in localStorage to simulate backend persistence. The project helped me understand component structure, state management, conditional rendering, form handling, and deployment. As a next step, I would connect it to a backend and database for real authentication and real appointment management.",
+            "quote",
+        )
+    )
+    story.append(p("HR strengths to mention", "h2"))
+    story.append(
+        bullets(
+            [
+                "I chose a real-world healthcare problem instead of a simple clone.",
+                "I completed the full user journey from login to booking history.",
+                "I deployed the project and fixed deployment configuration issues.",
+                "I understand the limitations and know how to improve it with backend integration.",
+            ]
+        )
+    )
+
+    story += section("12. Technical Round Explanation")
+    story.append(p("How I built it", "h2"))
+    story.append(
+        numbered(
+            [
+                "I started with a Vite React setup for a fast development environment.",
+                "I created separate components for authentication, landing page, service listing, search results, booking form, and appointments.",
+                "I used React Router to create multiple client-side pages.",
+                "I created an AuthContext to share login/logout state across the application.",
+                "I used localStorage to store registered users, current user, and bookings.",
+                "I created separate data files for pricing and consultation data so the UI code stays cleaner.",
+                "I used conditional rendering to display diagnostic centres or doctor consultation results depending on the selected service.",
+                "I deployed the production build to Vercel and configured SPA routing using vercel.json.",
+            ]
+        )
+    )
+    story.append(p("Technical keywords you should be ready to explain", "h2"))
+    story.append(
+        table(
+            [
+                ["Keyword", "Simple explanation"],
+                ["SPA", "A single page application loads one HTML page and changes views using JavaScript routing."],
+                ["Component", "A reusable UI block in React, such as Navbar or BookingForm."],
+                ["Props", "Data passed from one component to another."],
+                ["State", "Data that changes inside a component, such as form fields or selected tab."],
+                ["Context API", "A way to share data like login state without passing props manually through many components."],
+                ["Controlled form", "A form where input values are stored in React state and updated through onChange."],
+                ["localStorage", "Browser storage used to persist small data even after refresh."],
+                ["Client-side routing", "Navigation handled by React Router without requesting a new HTML page from the server."],
+            ],
+            widths=[1.55 * inch, 5.0 * inch],
+        )
+    )
+
+    story += section("13. Common Interview Questions")
+    qa_rows = [
+        ["Question", "Good answer"],
+        ["Why did you build CareQueue?", "I wanted to build a real-world frontend app where users complete an actual workflow: login, search, booking, and appointment management."],
+        ["Why React?", "React helps break the UI into reusable components and manage dynamic data such as forms, login state, and filtered search results."],
+        ["Why Vite?", "Vite gives a faster development server and optimized production build for modern frontend projects."],
+        ["How does login work?", "Signup saves users in localStorage. Login checks the entered credentials against stored users and saves currentUser on success."],
+        ["Is this secure authentication?", "No. It is a frontend prototype. In production I would use backend authentication, hashed passwords, JWT/session handling, and HTTPS APIs."],
+        ["How are appointments stored?", "Appointments are stored in localStorage as an array under carequeue_bookings. Each booking includes userEmail, service, centre, date, timing, price, and status."],
+        ["How does search work?", "The selected service is passed in the URL query string. SearchResults reads it and filters mock centre data or hospital doctor data."],
+        ["How did you deploy it?", "I pushed the code to GitHub, imported it into Vercel, set the correct root directory, and used Vite build settings."],
+        ["What challenge did you face?", "During deployment, Vercel first failed because it looked for package.json in the wrong folder. I fixed it by setting the correct root directory."],
+        ["What would you improve next?", "I would add a backend, database, real authentication, stronger validation, admin dashboard, appointment availability, and API-based centre data."],
+    ]
+    story.append(table(qa_rows, widths=[2.0 * inch, 4.55 * inch]))
+
+    story += section("14. Limitations and Future Scope")
+    story.append(p("Current limitations", "h2"))
+    story.append(
+        bullets(
+            [
+                "Authentication is stored in localStorage, so it is not secure for production.",
+                "Appointments are stored only in the browser, so they do not sync across devices.",
+                "Diagnostic centres, hospitals, doctors, prices, and reviews are mock data.",
+                "There is no admin panel to manage appointments or centres.",
+                "There is no payment gateway or real-time slot availability.",
+                "Medical data privacy and compliance are not implemented because this is a frontend prototype.",
+            ]
+        )
+    )
+    story.append(p("Future enhancements", "h2"))
+    story.append(
+        bullets(
+            [
+                "Add Node.js/Express or Firebase backend.",
+                "Use MongoDB, PostgreSQL, or Firebase Firestore for persistent data.",
+                "Implement secure authentication using hashed passwords and JWT/sessions.",
+                "Create an admin dashboard for centres to manage appointments.",
+                "Add real slot availability, rescheduling, email/SMS confirmation, and payment flow.",
+                "Improve form validation with better error messages.",
+                "Add automated tests for forms, routing, and booking logic.",
+                "Add API integration for real hospitals, centres, and doctor listings.",
+            ]
+        )
+    )
+
+    story += section("15. Resume and Portfolio Points")
+    story.append(p("Resume bullet examples", "h2"))
+    story.append(
+        bullets(
+            [
+                "Built CareQueue, a React and Vite healthcare booking SPA with authentication flow, service search, appointment booking, and booking management.",
+                "Implemented client-side routing using React Router and protected route rendering based on authentication state.",
+                "Designed reusable React components for landing page, service listing, search results, booking forms, and appointment cards.",
+                "Used localStorage to simulate user sessions and appointment persistence in a frontend prototype.",
+                "Deployed the app on Vercel with correct Vite build settings and SPA rewrite configuration.",
+            ]
+        )
+    )
+    story.append(p("Short portfolio description", "h2"))
+    story.append(
+        p(
+            "CareQueue is a healthcare appointment booking frontend built with React, Vite, React Router, and Tailwind CSS. It allows users to sign up, log in, search diagnostic services and doctor consultations, book appointments, and manage bookings. The project is deployed on Vercel and demonstrates practical frontend skills through a complete user journey.",
+            "quote",
+        )
+    )
+
+    story += section("16. Final Study Checklist")
+    story.append(
+        bullets(
+            [
+                "Practice the 30-second and 1-minute explanation aloud.",
+                "Be ready to explain the difference between frontend prototype and production app.",
+                "Know the localStorage keys: users, currentUser, and carequeue_bookings.",
+                "Understand how React Router query params are used for service and booking details.",
+                "Open the live Vercel link before interview and check the main flow.",
+                "Keep GitHub and live demo links ready.",
+                "Do not claim real backend, real database, or real secure authentication.",
+                "Explain future improvements confidently.",
+            ]
+        )
+    )
+    story.append(
+        callout(
+            "Best closing line in interview",
+            "This project helped me understand how to convert a real-world idea into a working frontend application with routing, forms, state, conditional rendering, local persistence, and deployment.",
+        )
+    )
+
+    return story
+
+
+def main():
+    doc = SimpleDocTemplate(
+        str(OUTPUT),
+        pagesize=A4,
+        rightMargin=0.75 * inch,
+        leftMargin=0.75 * inch,
+        topMargin=0.72 * inch,
+        bottomMargin=0.65 * inch,
+        title="CareQueue Project Interview Guide",
+        author="CareQueue",
+    )
+    story = build_story()
+    doc.build(story, onFirstPage=add_page_number, onLaterPages=add_page_number)
+    print(OUTPUT)
+
+
+if __name__ == "__main__":
+    main()
