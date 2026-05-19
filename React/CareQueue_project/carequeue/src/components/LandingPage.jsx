@@ -133,7 +133,7 @@ const LandingPage = () => {
             >
               <div className="h-52 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop"
+                  src="https://ebv2e3r5onu.exactdn.com/wp-content/uploads/2022/04/SCANS-1024x576.png?strip=all"
                   alt="Scans"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -168,7 +168,7 @@ const LandingPage = () => {
             >
               <div className="h-52 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.stockcake.com/public/8/f/d/8fd02691-12dd-4211-b6a1-49f333d12265_large/digital-heart-concept-stockcake.jpg"
                   alt="ECG Test"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -203,7 +203,7 @@ const LandingPage = () => {
             >
               <div className="h-52 overflow-hidden relative">
                 <img
-                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop"
+                  src="https://www.ganeshdiagnostic.com/admin/public/assets/images/product/1663589361-Echocardiogram.webp"
                   alt="Echocardiogram Test"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -259,6 +259,41 @@ const LandingPage = () => {
                 </p>
                 <div className="flex items-center text-emerald-600 font-semibold group-hover:gap-3 gap-2 transition-all">
                   <span>Find Centres</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Doctor Consultations Card */}
+            <div
+              onClick={() => handleBook("doctor consultations")}
+              className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl hover:border-red-200 transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="h-52 overflow-hidden relative">
+                <img
+                  src="https://www.shutterstock.com/image-photo/doctor-using-digital-tablet-laptop-600nw-2637306569.jpg"
+                  alt="Doctor Consultations"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="bg-purple-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Expert Doctors</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Book Doctor Consultations</h3>
+                <p className="text-slate-500 leading-relaxed mb-5">
+                  Connect with experienced doctors for general health checkups, specialist consultations, and personalized medical advice.
+                </p>
+                <div className="flex items-center text-purple-600 font-semibold group-hover:gap-3 gap-2 transition-all">
+                  <span>Find Doctors</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>

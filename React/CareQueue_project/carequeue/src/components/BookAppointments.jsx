@@ -94,7 +94,7 @@ const BookAppointments = () => {
 
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-40 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop" alt="Other Scans" className="w-full h-full object-cover" />
+                <img src="https://ebv2e3r5onu.exactdn.com/wp-content/uploads/2022/04/SCANS-1024x576.png?strip=all" alt="Other Scans" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
@@ -115,7 +115,7 @@ const BookAppointments = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop" alt="ECG Test" className="w-full h-full object-cover" />
+                <img src="https://images.stockcake.com/public/8/f/d/8fd02691-12dd-4211-b6a1-49f333d12265_large/digital-heart-concept-stockcake.jpg" alt="ECG Test" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
@@ -130,7 +130,7 @@ const BookAppointments = () => {
 
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="h-48 bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop" alt="Echocardiogram Test" className="w-full h-full object-cover" />
+                <img src="https://www.ganeshdiagnostic.com/admin/public/assets/images/product/1663589361-Echocardiogram.webp" alt="Echocardiogram Test" className="w-full h-full object-cover" />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
