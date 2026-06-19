@@ -1,65 +1,168 @@
-﻿//// Inheritance test,
+﻿////// Inheritance test,
 
-//using System;
+////using System;
 
 
 
-//class Animal
+////class Animal
+////{
+////    public void Sleep()
+////    {
+////        Console.WriteLine("Cat is Sleepng");
+////    }
+////}
+
+////class Cat : Animal
+////{
+////    public void Meow()
+////    {
+////        Console.WriteLine("Cat is Meowing");
+////    }
+////}
+////class Program
+////{
+////    static void Main()
+////    {
+////        Cat C = new Cat();
+
+////        C.Sleep();
+////        C.Meow();
+////    }
+////}
+
+
+//// private ID execution public id calling
+
+////using System;
+
+////class Student
+////{
+////    static void Id()
+////    {
+////        Console.WriteLine("ID: 245567");
+////    }
+
+////    static void Name()
+////    {
+////        Console.WriteLine("Name: Imran P");
+////    }
+
+////    public void Showing()
+////    {
+////        Id();
+////        Name();
+////    }
+////}
+
+////class Program
+////{
+////    static void Main()
+////    {
+////        Student obj1 = new Student();
+////        obj1.Showing();
+////    }
+////}
+
+
+//// constructor 19.06.2026
+
+//class student
 //{
-//    public void Sleep()
+//    public string Name;
+//    public student(string inputname)
 //    {
-//        Console.WriteLine("Cat is Sleepng");
-//    }
+//        Name = inputname;
+//}
 //}
 
-//class Cat : Animal
-//{
-//    public void Meow()
-//    {
-//        Console.WriteLine("Cat is Meowing");
-//    }
-//}
-//class Program
+//internal class class1
 //{
 //    static void Main()
-//    {
-//        Cat C = new Cat();
+//    { 
+//    student obj1 = new student ("Immu");
+//    student obj2 = new student("Gayu");
 
-//        C.Sleep();
-//        C.Meow();
+//        Console.WriteLine(obj1.Name);
+//        Console.WriteLine(obj2.Name);
+
 //    }
 //}
 
 
-// private ID execution public id calling
-
-//using System;
+//Constructor overloading :
 
 //class Student
 //{
-//    static void Id()
-//    {
-//        Console.WriteLine("ID: 245567");
+//    public int ID;
+//    public string Name;
+//    public string Dept;
+//    public String Gender;
+//    public int TotalMarks;
+
+//    public Student(int id, string name, string gender) 
+
+//    { 
+//        ID = id;
+//        Name = name;
+//        Gender = gender;
+        
+    
 //    }
 
-//    static void Name()
+//    public Student(int id, string name, string dept, int totalMarks)
 //    {
-//        Console.WriteLine("Name: Imran P");
+//        ID =id;
+//        Name =name;
+//        Dept=dept;
+//        TotalMarks =totalMarks;
+
+        
 //    }
 
-//    public void Showing()
+//    static void Main()
 //    {
-//        Id();
-//        Name();
+//        Student Forimmu = new Student(101, "Immu", "Male");
+//        Console.WriteLine("Id : " + Forimmu.ID);
+//        Console.WriteLine("Name :" + Forimmu.Name);
+//        Console.WriteLine("Name :" + Forimmu.Gender);
+
+//        Student ForGayu = new Student(102, "Gayu", "VISCOM", 564);
+//        Console.WriteLine("Id : " + ForGayu.ID);
+//        Console.WriteLine("Name :" + ForGayu.Name);
+//        Console.WriteLine("Department :" + ForGayu.Dept);
+//        Console.WriteLine("Total Mark Secured is " + ForGayu.TotalMarks);
+
+
+
 //    }
 //}
 
-//class Program
+
+// Static Method. 
+
+
+//namespace staticdemo
 //{
-//    static void Main()
+
+//    class Mathhelper
+//    { 
+//    public static int x,y;
+//        public static void Add(int a, int b)
+//        {
+//            x = a;  //static method only contains static variables
+//            y = b;
+
+//            Console.WriteLine(x + y);
+//        }
+//    }
+
+//    internal class class2
 //    {
-//        Student obj1 = new Student();
-//        obj1.Showing();
+//        static void Main()
+//        {
+//             Mathhelper.Add(10, 20);
+        
+//        }
 //    }
 //}
 

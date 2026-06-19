@@ -12,3 +12,18 @@ P:\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\refint\ConsoleApp1.dll
 P:\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.pdb
 P:\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.genruntimeconfig.cache
 P:\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ref\ConsoleApp1.dll
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\bin\Debug\net10.0\ConsoleApp1.exe
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\bin\Debug\net10.0\ConsoleApp1.deps.json
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\bin\Debug\net10.0\ConsoleApp1.runtimeconfig.json
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\bin\Debug\net10.0\ConsoleApp1.dll
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\bin\Debug\net10.0\ConsoleApp1.pdb
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.AssemblyInfoInputs.cache
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.AssemblyInfo.cs
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.sourcelink.json
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.dll
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\refint\ConsoleApp1.dll
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.pdb
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.genruntimeconfig.cache
+P:\6TO8 TECHNICAL\Backend\C#\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ref\ConsoleApp1.dll
