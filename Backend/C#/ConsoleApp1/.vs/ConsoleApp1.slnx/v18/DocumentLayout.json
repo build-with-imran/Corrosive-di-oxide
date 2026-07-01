@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\static.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\static.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\multithreading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\multithreading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B22AAF85-51A5-4CC1-B5BE-B3A164C1C8E4}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\stockalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\stockalert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\sqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\sqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\polymorphismtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\polymorphismtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\inheritancetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\inheritancetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\filehandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\filehandling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\class2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|p:\\6to8 technical\\backend\\c#\\consoleapp1\\consoleapp1\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Form1.cs*",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Static.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Static.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Static.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Static.cs",
+              "RelativeToolTip": "ConsoleApp1\\Static.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAuwDUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T09:06:14.825Z",
+              "WhenOpened": "2026-07-01T16:43:23.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Form1.cs [Design]*",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T08:44:05.686Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
-              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "StockAlert.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\StockAlert.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\StockAlert.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\StockAlert.cs",
+              "RelativeToolTip": "ConsoleApp1\\StockAlert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T08:53:08.579Z",
+              "WhenOpened": "2026-07-01T16:40:34.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "sqlserver.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\sqlserver.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\sqlserver.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\sqlserver.cs",
+              "RelativeToolTip": "ConsoleApp1\\sqlserver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:26.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PolymorphismTask.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\PolymorphismTask.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\PolymorphismTask.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\PolymorphismTask.cs",
+              "RelativeToolTip": "ConsoleApp1\\PolymorphismTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:23.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InheritanceTask.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\InheritanceTask.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\InheritanceTask.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\InheritanceTask.cs",
+              "RelativeToolTip": "ConsoleApp1\\InheritanceTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:19.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Filehandling.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Filehandling.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Filehandling.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Filehandling.cs",
+              "RelativeToolTip": "ConsoleApp1\\Filehandling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:17.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Multithreading.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Multithreading.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Multithreading.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Multithreading.cs",
+              "RelativeToolTip": "ConsoleApp1\\Multithreading.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwCcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:39:37.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Class2.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Class2.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Class2.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Class2.cs",
+              "RelativeToolTip": "ConsoleApp1\\Class2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:15.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
-              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Program.cs*",
-              "RelativeToolTip": "ConsoleApp1\\Program.cs*",
-              "ViewState": "AgIAAHIBAAAAAAAAAAAAAIIBAAADAAAAAAAAAA==",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AgIAAHUBAAAAAAAAAAAAAH4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-18T09:45:57.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Class1.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Class1.cs",
+              "ToolTip": "P:\\6TO8 TECHNICAL\\Backend\\C#\\ConsoleApp1\\ConsoleApp1\\Class1.cs",
+              "RelativeToolTip": "ConsoleApp1\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T16:40:12.56Z",
               "EditorCaption": ""
             }
           ]
